@@ -33,8 +33,20 @@ with open("all_origin_col1-.txt") as master_file:
 #     count = sum(1 for _ in file)
 #     print(f"The number of entries is {count}")
 
-# print number of lines
+# print number of keywords
+with open("key_words_env_source.txt") as list_of_keywords:
+    my_list = list(list_of_keywords)
+    print(f"KEYWORDS: The number of keywords is {len(my_list)}")
+    print(f"KEYWORDS: The number of keywords lines is {len(set(my_list))}")
+
+# number of lines in the original file with headers
+with open("all_origin_col1-.txt") as master_file:
+    my_list = list(master_file)
+    print(f"ORIGINAL FILE: The number of lines (headers) is {len(my_list)}")
+    print(f"ORIGINAL FILE: The number of uniques lines (headers) is {len(set(my_list))}")
+
+# number of lines in the filtered file with headers
 with open("filtered_NCBI_headers.txt") as file:
     my_list = list(file)
-    print(f"The number of entries is {len(my_list)}")
-    print(f"The number of uniques entries is {len(set(my_list))}")
+    print(f"FILTERED FILE: The number of lines (headers) is {len(my_list)}")
+    print(f"FILTERED FILE: The number of uniques lines (headers) is {len(set(my_list))}")
